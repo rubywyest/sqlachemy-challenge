@@ -50,7 +50,7 @@ def welcome():
 
 @app.route("/api/v1.0/<start_date>/<end_date>")
 def date_search(start_date, end_date):
-    """Return the list of dates and precepitaiton"""
+    """Return the list of dates and  temp observation"""
     # Query 
     print(start_date)
     print(end_date)
@@ -79,7 +79,7 @@ def date_search(start_date, end_date):
 
 @app.route("/api/v1.0/<start_date>")
 def date_search_start(start_date):
-    """Return the list of dates and precepitaiton"""
+    """Return the list of dates and temp observation """
     # Query 
     print(start_date)
     session = Session(engine)
@@ -169,7 +169,7 @@ def stations():
 
 @app.route("/api/v1.0/tobs")
 def tobs_data():
-    """Return a list of stations data including the stations, name, latitued, longitude,amd elvation"""
+    """Return a list of  temp observation"""
 
     # Open a communication session with the database
     session = Session(engine)
@@ -196,7 +196,7 @@ def tobs_data():
 
     # return jsonify(all_names)
 
-    # # Create a dictionary from the row data and append to a list of all_stations
+    # # Create a dictionary from the row data and append to a list of all_tobs
     all_tobs = []
     for tobs in tobs_scores:
         # print(tobs)
